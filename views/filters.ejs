@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title><%- title %></title>
+      <meta name="viewport" content="with=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="main.css">
+      <script src="{{ url_for('static', filename='../settings.js') }}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <%- include('partials/header.ejs'); %>
+
+      <main>
+        <input type="submit" name="apply" value="Apply Settings" onclick="applySettings();">
+      </main>
+
+      <%- include('partials/footer.ejs'); %>
+   </body>
+</html>
