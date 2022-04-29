@@ -11,7 +11,18 @@
       <%- include('partials/header.ejs'); %>
 
       <main>
-        <input type="submit" name="apply" value="Apply Settings" onclick="applySettings();">
+         <h1>User Settings</h1>
+
+         <h4>Include private schools</h4>
+         <input type="checkbox" id="private" />
+
+         <h4>Include schools with a religious affiliation</h4>
+         <input type="checkbox" id="religious" />
+
+         <h4>Only show elite schools</h4>
+         <input type="checkbox" id="elite" />
+
+         <input type="submit" name="apply" value="Apply Settings" onclick="applySettings();">
       </main>
 
       <%- include('partials/footer.ejs'); %>
