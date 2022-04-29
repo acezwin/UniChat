@@ -24,6 +24,9 @@ app.get('/explore', (reg, res) => {
 app.get('/chatBot', (reg, res) => {
     res.render('chatbot', {title: 'UniChat'})
 })
+app.get('/filters', (reg, res) => {
+    res.render('filters', {title: 'Settings'})
+})
 
 app.listen(port, () => 
     console.info('App is listening on port 8080')
