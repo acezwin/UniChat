@@ -1,15 +1,20 @@
 function applySettings() {
-    var settings_data = [
-        {"private": privateSchools},
-        {"religious": religiousSchools},
-        {"elite": eliteSchools}
-    ]
+    var filterValues = [];
 
-    $.ajax({
-        type: "POST",
-        url: "/filters",
-        data: JSON.stringify(settings_data),
-        contentType: "application/json",
-        dataType: 'json' 
+    $("apply").click(function(e) {
+        e.preventDefault();
+
+        $("input[name='filters']:checked").each(function() {
+            filterValues.push($(this).val());
+        });
+        
+        $.ajax({
+            type: "POST",
+            url: "/filters",
+            data: JSON.stringify(filterValues),
+            contentType: "application/json",
+            dataType: 'html' 
+        });
     });
 }
+
