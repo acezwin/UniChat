@@ -1,16 +1,24 @@
-function applySettings() {
-    var filterValues = [];
+$(document).ready(function() {
+    $("#filterForm").submit(function(e) {
+        e.preventDefault();
 
-    $("input[name='filters']:checked").each(function () {
-        filterValues.push($(this).val());
-    });
+        //for testing
+        alert("submitted");
+        var filterValues = [];
 
-    $.ajax({
-        type: "POST",
-        url: "/filters",
-        data: JSON.stringify(filterValues),
-        contentType: "application/json",
-        dataType: 'html'
+        $("input[name='filters']:checked").each(function () {
+            filterValues.push($(this).val());
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/filters",
+            data: JSON.stringify(filterValues),
+            contentType: "application/json",
+            dataType: 'html'
+        });
     });
-}
+});
+
+
 
